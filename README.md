@@ -14,6 +14,10 @@ composer install && composer update
 
 ##### setup database configuration in ".env" file, then run this
 ```
+php artisan key:generate
+```
+##### to push the migration to physical database, run this
+```
 php artisan migrate:fresh --seed
 ```
 
