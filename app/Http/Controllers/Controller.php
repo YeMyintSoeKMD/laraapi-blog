@@ -12,8 +12,13 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     // custom method
-    public function sendResponse($data = [], $message = 'success')
+    public function successResponse($data = [], $message = 'success')
     {
         return response()->json(['data' => $data, 'message' => $message], 200);
+    }
+
+    public function unAuthorizedResponse($data = [], $message = 'fail')
+    {
+        return response()->json(['data' => $data, 'message' => $message], 401);
     }
 }
